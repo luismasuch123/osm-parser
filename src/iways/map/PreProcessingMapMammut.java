@@ -7,38 +7,36 @@ package iways.map;
  *  
  *************************************************************************/
 
-import java.io.*;
-import java.util.*;
+import iways.geo.GeoCalculator;
+import org.w3c.dom.*;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
-
-import iways.geo.*;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *  This class provide all the methods to read OSM file and generate edges 
  *  and nodes. 
  */
-public class PreProcessingMap {
+public class PreProcessingMapMammut {
 	/**
 	 *  Load OSM file from given path and create a graph.
 	 */
 	public static void load(String path) {
 		try {
-            		String vertexFilename = "/Users/luismasuchibanez/osm-parser/out/production/osm-parser/iways/map/vertex.txt";
-            		String edgeFilename   = "/Users/luismasuchibanez/osm-parser/out/production/osm-parser/iways/map/edges.txt";
-            		String streetFilename = "/Users/luismasuchibanez/osm-parser/out/production/osm-parser/iways/map/streets.txt";
+            		String vertexFilename = "Z:\osm-parser\out\production\osm-parser\iways\map\vertex.txt";
+            		String edgeFilename   = "Z:\osm-parser\out\production\osm-parser\iways\map\edges.txt";
+            		String streetFilename = "Z:\osm-parser\out\production\osm-parser\iways\map\streets.txt";
             		boolean isDirected = true;
             
-			PreProcessingMap preProcessingMap = new PreProcessingMap();
+			PreProcessingMapMammut preProcessingMap = new PreProcessingMapMammut();
 			
 			Document doc = preProcessingMap.createXMLDocument(path);
 			// read the boundary of this graph
@@ -489,13 +487,14 @@ public class PreProcessingMap {
 	
 	public static void main(String [] args) {
 		if (args.length == 0) {
-			PreProcessingMap.load("/Users/luismasuchibanez/osm-parser/src/iways/map/Seattle_test.osm");
+			PreProcessingMapMammut.load("Z:\osm-parser\src\iways\map\Seattle_test.osm");
 		} 
 		else {
 			System.out.println("Your should specify an OSM file as input!");
 			System.out.println("Usage: program <input_file>");
 		}
 	}
+	/*
 }
 
 /*************************************************************************
