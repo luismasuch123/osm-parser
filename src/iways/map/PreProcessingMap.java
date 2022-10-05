@@ -489,7 +489,7 @@ public class PreProcessingMap {
 	
 	public static void main(String [] args) {
 		if (args.length == 0) {
-			PreProcessingMap.load("/Users/luismasuchibanez/osm-parser/src/iways/map/Seattle_test.osm");
+			PreProcessingMap.load("/Users/luismasuchibanez/osm-parser/src/iways/map/Beijing.osm");
 		} 
 		else {
 			System.out.println("Your should specify an OSM file as input!");

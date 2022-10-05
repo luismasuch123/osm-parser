@@ -34,7 +34,7 @@ public class PreProcessingMapMammut {
             		String vertexFilename = "Z:\osm-parser\out\production\osm-parser\iways\map\vertex.txt";
             		String edgeFilename   = "Z:\osm-parser\out\production\osm-parser\iways\map\edges.txt";
             		String streetFilename = "Z:\osm-parser\out\production\osm-parser\iways\map\streets.txt";
-            		boolean isDirected = true;
+					boolean isDirected = true;
             
 			PreProcessingMapMammut preProcessingMap = new PreProcessingMapMammut();
 			
@@ -494,7 +494,6 @@ public class PreProcessingMapMammut {
 			System.out.println("Usage: program <input_file>");
 		}
 	}
-	/*
 }
 
 /*************************************************************************
